@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
+import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import { auth } from "./firebaseconfigurations/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -39,7 +41,7 @@ function MainApp({ user, setUser, handleLogout }) {
 
       <div className={!hideNavbar ? "pt-20" : ""}>
         <Routes>
-          <Route path="/" element={<h1>Home Page</h1>} />
+          <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard user={user} />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
         </Routes>
