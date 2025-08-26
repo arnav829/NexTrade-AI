@@ -12,6 +12,8 @@ const Navbar = ({ user, onLogout }) => {
       <div className="flex flex-row items-center gap-8">
         <Link to="/" className="hover:text-blue-400 transition">Home</Link>
         <Link to="/dashboard" className="hover:text-blue-400 transition">Dashboard</Link>
+        <Link to="/about" className="hover:text-blue-400 transition">About</Link> {/*m*/}
+
       </div>
 
       {/* Auth Button */}
