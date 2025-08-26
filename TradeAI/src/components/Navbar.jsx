@@ -2,13 +2,11 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ user, onLogout }) => {
   return (
-    <nav className="bg-black text-white flex justify-between items-center px-6 py-4 shadow-md">
-      {/* Logo / Brand */}
+    <nav className="bg-black text-white sticky top-0 z-50 flex justify-between items-center px-6 py-4 shadow-md">
       <div className="flex items-center gap-3">
         <p className="text-2xl font-bold">Nextrade AI</p>
       </div>
 
-      {/* Links */}
       <div className="flex flex-row items-center gap-8">
         <Link to="/" className="hover:text-blue-400 transition">Home</Link>
         <Link to="/dashboard" className="hover:text-blue-400 transition">Dashboard</Link>
@@ -16,7 +14,6 @@ const Navbar = ({ user, onLogout }) => {
 
       </div>
 
-      {/* Auth Button */}
       <div>
         {!user ? (
           <Link
