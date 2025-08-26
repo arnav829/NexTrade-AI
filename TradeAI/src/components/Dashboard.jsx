@@ -4,7 +4,7 @@ import mobileMockup from "../assets/mobile-mockup.webp";
 export default function TradingDashboard({ user }) {
   return (
     <div className="min-h-screen bg-black">
-      <div className="bg-black bg-opacity-60 min-h-screen p-6">
+      <div className="p-6">
         <header className="flex justify-between items-center text-white mb-8">
           <h1 className="text-3xl font-bold">Trading Dashboard</h1>
           <div className="text-3xl font-bold text-gray-300">
