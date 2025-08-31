@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom"; 
 import sampleVideo from "../assets/home_bg_video.mp4"; 
 import bgImage from "../assets/bg_video.webp"; 
@@ -8,12 +7,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="max-w-7xl w-full grid md:grid-cols-2 gap-12"
-      >
+      <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12">
         <div className="flex flex-col justify-center space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             Your Personal{" "}
@@ -30,22 +24,15 @@ export default function Home() {
             <li>💬 Natural conversations about market strategies</li>
           </ul>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <button
             onClick={() => navigate("/login")}
             className="mt-6 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition text-white font-medium shadow-lg w-fit"
           >
             Get Started
-          </motion.button>
+          </button>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="relative"
-        >
+        <div className="relative">
           <div className="bg-white text-black rounded-2xl shadow-2xl p-6 space-y-4 max-w-md mx-auto">
             <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg w-fit font-medium">
               Claude with HDFC SKY MCP
@@ -75,17 +62,12 @@ export default function Home() {
               positive outlook for both holdings with good upside potential.
             </p>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-3xl md:text-4xl font-extrabold text-center pt-40 "
-      >
+      <h2 className="text-3xl md:text-4xl font-extrabold text-center pt-40 ">
         Trade Smarter. Profit with AI.
-      </motion.h2>
+      </h2>
 
       <div
         className="w-full mt-4 flex items-center justify-center rounded-2xl shadow-2xl overflow-hidden"
