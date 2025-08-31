@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom"; 
 import sampleVideo from "../assets/home_bg_video.mp4"; 
 import bgImage from "../assets/bg_video.webp"; 
+import { Twitter, Linkedin, Github } from "lucide-react";
+
 
 export default function Home() {
   const navigate = useNavigate(); 
@@ -87,6 +89,52 @@ export default function Home() {
           className="w-3/4 h-3/4 object-contain rounded-xl shadow-lg"
         />
       </div>
+
+      <footer className="bg-black text-gray-400 py-12 px-6 mt-20 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+        
+        <div>
+          <h2 className="text-white text-2xl font-bold mb-4">NexTradeAI</h2>
+          <p className="text-sm">
+            Smarter trading powered by AI.  
+            Turning complex data into clear, confident decisions.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
+          <ul className="space-y-2">
+            <li><a href="/" className="hover:text-blue-500 transition">Home</a></li>
+            <li><a href="/Dashboard" className="hover:text-blue-500 transition">Dashboard</a></li>
+            <li><a href="/login" className="hover:text-blue-500 transition">Login</a></li>
+            <li><a href="/about" className="hover:text-blue-500 transition">About</a></li>
+          </ul>
+        </div>
+
+
+        <div className="flex flex-col">
+          <h3 className="text-white text-lg font-semibold mb-4">Connect</h3>
+          <div className="flex space-x-4">
+            <a href="#" className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
+              <Twitter className="w-5 h-5 text-white" />
+            </a>
+            <a href="#" className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
+              <Linkedin className="w-5 h-5 text-white" />
+            </a>
+            <a href="#" className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
+              <Github className="w-5 h-5 text-white" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="text-center text-gray-600 text-sm mt-12 border-t border-gray-800 pt-6">
+        © {new Date().getFullYear()} NexTradeAI. All rights reserved.
+      </div>
+    </footer>
+
     </div>
+
+    
   );
 }

@@ -2,12 +2,12 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white flex flex-col items-center justify-center px-8 py-16">
       
-      {/* Title */}
+
       <h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-blue-400">
         About <span className="text-white">Nextrade AI</span>
       </h1>
 
-      {/* Intro Paragraph */}
+
       <p className="text-center text-lg md:text-xl max-w-3xl text-gray-300 mb-12 leading-relaxed">
         Nextrade AI is a smart trading assistant designed to help investors 
         predict market trends, analyze stock data, and make informed 
@@ -15,7 +15,6 @@ const About = () => {
         stock information to empower traders at every level.
       </p>
 
-      {/* Features Section */}
       <div className="grid md:grid-cols-3 gap-8 mt-8">
         {[ 
           {
