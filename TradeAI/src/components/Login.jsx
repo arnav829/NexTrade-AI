@@ -2,7 +2,6 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../firebaseconfigurations/config";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { motion } from "framer-motion"; 
 
 import bgImage from "../assets/login-bg.jpg";
 import leftBg from "../assets/left-bg.jpg"; 
@@ -23,10 +22,7 @@ export default function Login({ setUser }) {
 
   return (
     <div className="flex h-screen text-white">
-      <motion.div
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
+      <div
         className="w-1/3 relative flex flex-col p-10 shadow-lg bg-cover bg-center"
         style={{ backgroundImage: `url(${leftBg})` }}
       >
@@ -42,19 +38,17 @@ export default function Login({ setUser }) {
 
             <h2 className="text-xl font-semibold">Sign In</h2>
 
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(255,255,255,0.3)" }}
-              whileTap={{ scale: 0.95 }}
+            <button
               onClick={signIn}
               className="flex items-center justify-center gap-2 w-56 px-4 py-3 border border-gray-500 
-                rounded-lg bg-white text-gray-800 font-medium hover:bg-gray-100 transition"
+                rounded-lg bg-white text-gray-800 font-medium hover:bg-gray-100 transition cursor-pointer"
             >
               <FcGoogle size={22} />
               Login with Google
-            </motion.button>
+            </button>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       <div
         className="w-2/3 flex flex-col relative overflow-hidden bg-cover bg-center"
@@ -62,35 +56,18 @@ export default function Login({ setUser }) {
       >
         <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/40 to-transparent"></div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-          className="relative z-10 h-full overflow-y-auto p-12 flex items-center"
-        >
+        <div className="relative z-10 h-full overflow-y-auto p-12 flex items-center">
           <div className="max-w-lg text-left space-y-6">
-            <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-4xl font-extrabold"
-            >
+            <h1 className="text-4xl font-extrabold">
               Empowering Smarter Trading
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="text-lg leading-relaxed"
-            >
+            <p className="text-lg leading-relaxed">
               Nextrade AI combines the power of artificial intelligence with advanced market
               insights to help you make smarter, faster, and more confident trading decisions.
-            </motion.p>
+            </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
