@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom";
 import sampleVideo from "../assets/home_bg_video.mp4"; 
 import bgImage from "../assets/bg_video.webp"; 
 import { Twitter, Linkedin, Github } from "lucide-react";
-
+import StockTable from "../components/StockTable";
 
 export default function Home() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center">
@@ -86,9 +86,11 @@ export default function Home() {
           loop
           muted
           playsInline
-          className="w-3/4 h-3/4 object-contain rounded-xl shadow-lg"
+          className="w-3/4 h-3/4 object-contain shadow-lg"
         />
       </div>
+
+       <StockTable />
 
       <footer className="bg-black text-gray-400 py-12 px-6 mt-20 border-t border-gray-800">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
