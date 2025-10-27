@@ -1,6 +1,7 @@
-import React from "react";
+import React, { use } from "react";
 import mobileMockup from "../assets/mobile-mockup.webp";
 import { Twitter, Linkedin, Github } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const FeatureCard = ({ title, description, buttonText }) => (
   <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300">
@@ -19,6 +20,7 @@ const FeatureCard = ({ title, description, buttonText }) => (
 );
 
 export default function TradingDashboard({ user }) {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-950 text-white">
       <header className="p-6 flex flex-col md:flex-row justify-between items-center">
@@ -49,7 +51,7 @@ export default function TradingDashboard({ user }) {
 
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white rounded-3xl shadow-lg p-10">
           <div className="flex flex-col justify-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-snug">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
               Indian markets at your fingertips.
             </h2>
             <p className="text-gray-600 text-lg mb-6">
@@ -57,14 +59,28 @@ export default function TradingDashboard({ user }) {
               investor you want to be.
             </p>
             <button
-              className="w-fit px-6 py-3 rounded-full font-semibold
+              className="w-56 px-6 mb-5 py-3 cursor-pointer rounded-full font-semibold
               bg-gradient-to-r from-green-500 to-emerald-600 text-white
               shadow-md hover:shadow-lg hover:scale-105
               transition-all duration-300"
             >
               Start Investing
             </button>
+
+
+             <button
+                onClick={() => navigate("/news")}
+                className="w-56 px-6 py-3 cursor-pointer rounded-full font-semibold
+                bg-gradient-to-r from-green-500 to-emerald-600 text-white
+                shadow-md hover:shadow-lg hover:scale-105
+                transition-all duration-300"
+            >
+                Real-time News
+              </button>
+
           </div>
+
+
 
           <div className="flex justify-center">
             <img

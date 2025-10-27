@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
-import About from "./components/About"; // m
+import About from "./components/About"; 
+import News from "./components/News";
 import { auth } from "./firebaseconfigurations/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
@@ -45,8 +46,8 @@ function MainApp({ user, setUser, handleLogout }) {
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard user={user} />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
-          <Route path="/about" element={<About user={user} />} />  {/*m*/ }
-          
+          <Route path="/about" element={<About user={user} />} />
+          <Route path="/news" element={<News />} /> 
         </Routes>
       </div>
     </>
