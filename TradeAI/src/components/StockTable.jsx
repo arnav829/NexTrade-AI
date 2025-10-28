@@ -47,7 +47,7 @@ const StockTable = () => {
             Loading live stock data...
           </div>
         ) : (
-          <table className="min-w-full bg-gray-800 rounded-xl shadow-lg">
+          <table className="min-w-full bg-black rounded-xl shadow-lg">
             <thead>
               <tr className="bg-black text-left">
                 <th className="py-3 px-4">#</th>
