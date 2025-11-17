@@ -22,7 +22,7 @@ const FeatureCard = ({ title, description, buttonText }) => (
 export default function TradingDashboard({ user }) {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-950 text-white">
+    <div className="min-h-screen text-white">
       <header className="p-6 flex flex-col md:flex-row justify-between items-center">
         <h1 className="text-3xl font-extrabold tracking-tight">
           Trading Dashboard
@@ -37,11 +37,6 @@ export default function TradingDashboard({ user }) {
 
       <main className="p-6 space-y-12">
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <FeatureCard
-            title="Smart Portfolio"
-            description="Your AI-powered portfolio is diversified across multiple sectors to maximize gains and minimize risks."
-            buttonText="Explore Portfolio"
-          />
           <FeatureCard
             title="Trend Analysis"
             description="Market trends are analyzed using historical data and AI models to predict short-term opportunities."

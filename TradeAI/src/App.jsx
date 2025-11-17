@@ -9,7 +9,6 @@ import News from "./components/News";
 import { auth } from "./firebaseconfigurations/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
-
 function App() {
   const [user, setUser] = useState(null);
 
