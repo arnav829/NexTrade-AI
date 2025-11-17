@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 
 import bgImage from "../assets/login-bg.jpg";
-import leftBg from "../assets/left-bg.jpg"; 
+import leftBg from "../assets/left-bg.jpg";
 
 export default function Login({ setUser }) {
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ export default function Login({ setUser }) {
 
             <button
               onClick={signIn}
-              className="flex items-center justify-center gap-2 w-56 px-4 py-3 border border-gray-500 
+              className="flex items-center justify-center gap-2 w-56 px-4 py-3 border border-gray-500
                 rounded-lg bg-white text-gray-800 font-medium hover:bg-gray-100 transition cursor-pointer"
             >
               <FcGoogle size={22} />

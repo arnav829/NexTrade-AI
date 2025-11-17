@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const API_KEY = "d3vso5hr01qn5gnjftegd3vso5hr01qn5gnjftf0"; // Replace with your Finnhub API key
+const API_KEY = "d3vso5hr01qn5gnjftegd3vso5hr01qn5gnjftf0";
 
 const symbols = [
   "AAPL", "MSFT", "GOOGL", "AMZN", "META", "TSLA", "NVDA", "BRK.B", "JPM",
@@ -22,7 +22,7 @@ const StockTable = () => {
         );
         const json = await res.json();
         results.push({ symbol, ...json });
-        await new Promise((resolve) => setTimeout(resolve, 200)); // small delay
+        await new Promise((resolve) => setTimeout(resolve, 200));
       }
       setData(results);
       setLoading(false);
@@ -34,7 +34,7 @@ const StockTable = () => {
 
   useEffect(() => {
     fetchStockData();
-    const interval = setInterval(fetchStockData, 20000); // refresh every 20s
+    const interval = setInterval(fetchStockData, 20000);
     return () => clearInterval(interval);
   }, []);
 
