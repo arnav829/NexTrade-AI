@@ -7,10 +7,33 @@ const symbols = [
   "V", "JNJ", "WMT", "PG", "MA", "UNH", "DIS", "HD", "PFE", "KO", "PEP"
 ];
 
+// **Company Names**
+const companyNames = {
+  AAPL: "Apple Inc.",
+  MSFT: "Microsoft Corp.",
+  GOOGL: "Alphabet Inc.",
+  AMZN: "Amazon.com Inc.",
+  META: "Meta Platforms",
+  TSLA: "Tesla Inc.",
+  NVDA: "Nvidia Corp.",
+  "BRK.B": "Berkshire Hathaway",
+  JPM: "JPMorgan Chase",
+  V: "Visa Inc.",
+  JNJ: "Johnson & Johnson",
+  WMT: "Walmart Inc.",
+  PG: "Procter & Gamble",
+  MA: "Mastercard Incorporated",
+  UNH: "UnitedHealth Group",
+  DIS: "Walt Disney Co.",
+  HD: "Home Depot",
+  PFE: "Pfizer Inc.",
+  KO: "Coca-Cola Company",
+  PEP: "PepsiCo Inc.",
+};
+
 const StockTable = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-
 
   const fetchStockData = async () => {
     try {
@@ -40,7 +63,7 @@ const StockTable = () => {
 
   return (
     <div className="p-10 bg-black text-white w-full">
-        <h1 className="text-5xl font-bold text-center m-10">What's Moving the Market</h1>
+      <h1 className="text-5xl font-bold text-center m-10">What's Moving the Market</h1>
       <div className="overflow-x-auto">
         {loading ? (
           <div className="text-center text-gray-400 animate-pulse py-10">
@@ -51,6 +74,7 @@ const StockTable = () => {
             <thead>
               <tr className="bg-black text-left">
                 <th className="py-3 px-4">#</th>
+                <th className="py-3 px-4">Company</th>
                 <th className="py-3 px-4">Symbol</th>
                 <th className="py-3 px-4">Current Price ($)</th>
                 <th className="py-3 px-4">Change ($)</th>
@@ -66,6 +90,9 @@ const StockTable = () => {
                     className="border-b border-gray-700 hover:bg-gray-700 transition"
                   >
                     <td className="py-2 px-4">{index + 1}</td>
+                    <td className="py-2 px-4 font-medium">
+                      {companyNames[stock.symbol] || "Unknown"}
+                    </td>
                     <td className="py-2 px-4 font-medium">{stock.symbol}</td>
                     <td className="py-2 px-4 font-semibold text-blue-400">
                       ${stock.c ? stock.c.toFixed(2) : "N/A"}
@@ -98,5 +125,3 @@ const StockTable = () => {
 };
 
 export default StockTable;
-
-
