@@ -30,10 +30,10 @@ export default function Home() {
             onClick={() => navigate("/login")}
             className="
               mt-4 sm:mt-6 px-4 py-2 text-sm
-              sm:px-6 sm:py-3 sm:text-base
+              sm:px-6 sm:py-3 cursor-pointer
               rounded-xl bg-blue-600 hover:bg-blue-700
-              transition text-white font-medium shadow-lg
-              w-full sm:w-fit
+              transition text-white font-medium
+              w-full sm:w-fit 
             "
           >
             Get Started
@@ -43,26 +43,24 @@ export default function Home() {
         <div className="relative px-4 sm:px-0">
           <div className="bg-white text-black rounded-2xl shadow-2xl p-4 sm:p-6 space-y-4 max-w-md mx-auto">
             <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg w-fit font-medium text-sm sm:text-base">
-              Claude with HDFC SKY MCP
-            </div>
-            <div className="bg-blue-600 text-white px-4 py-3 rounded-lg w-fit text-sm sm:text-base">
-              Show me my portfolio performance and what HDFC says
+              Analyst research indicates moderate upside potential across your US equity holdings
             </div>
             <div className="space-y-3 text-xs sm:text-sm">
               <div className="border p-3 rounded-lg">
-                <p><strong>SBI:</strong> ₹793.70 (100 shares)</p>
-                <p className="text-green-600">+1.40%</p>
-                <p>HDFC Research: <span className="font-semibold">BUY</span> | Target: ₹850</p>
-                <p>Upside: 7.1%</p>
+                  <p><strong>Apple (AAPL):</strong> $189.40 (10 shares)</p>
+                  <p className="text-green-600">+0.85%</p>
+                  <p>Analyst View: <span className="font-semibold">BUY</span> | Target: $205</p>
+                  <p>Upside: 8.2%</p>
               </div>
+
               <div className="border p-3 rounded-lg">
-                <p><strong>IRCTC:</strong> ₹770 (5 shares)</p>
-                <p className="text-green-600">+1.30%</p>
-                <p>HDFC Research: <span className="font-semibold">BUY</span> | Target: ₹820</p>
-              </div>
+                <p><strong>Tesla (TSLA):</strong> $203.50 (3 shares)</p>
+                <p className="text-red-600">-0.60%</p>
+                <p>Analyst View: <span className="font-semibold">HOLD</span> | Target: $215</p>
+            </div>
             </div>
             <p className="text-gray-700 text-xs sm:text-sm">
-              Your portfolio is up <strong>2.1% today</strong>. 
+              Your portfolio is up <strong>2.1% today</strong>.
               Research indicates positive upside in both holdings.
             </p>
           </div>

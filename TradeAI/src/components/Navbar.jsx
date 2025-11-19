@@ -6,6 +6,8 @@ const Navbar = ({ user, onLogout }) => {
 
   return (
     <nav className="bg-black text-white sticky top-0 z-50">
+
+      {/* Top Navbar */}
       <div className="flex justify-between items-center px-6 py-4 shadow-md">
         
         <p className="text-2xl font-bold">Nextrade AI</p>
@@ -42,6 +44,25 @@ const Navbar = ({ user, onLogout }) => {
         </button>
       </div>
 
+    
+      <div className="bg-gray-900 font-semibold py-2 overflow-hidden whitespace-nowrap border-t border-gray-700">
+  <div className="marquee">
+    <span>
+      Master Trading with Nextrade AI — Learn stock market basics, trade confidently, and grow your portfolio!  |
+      Beginner-friendly tutorials • AI-powered stock analysis • Real-time price tracking • Smart portfolio insights •
+      Start your trading journey with confidence and data-driven decisions!  |
+    </span>
+
+    <span>
+      Master Trading with Nextrade AI — Learn stock market basics, trade confidently, and grow your portfolio!  |
+      Beginner-friendly tutorials • AI-powered stock analysis • Real-time price tracking • Smart portfolio insights •
+      Start your trading journey with confidence and data-driven decisions!  |
+    </span>
+  </div>
+</div>
+
+
+    
       {open && (
         <div className="md:hidden flex flex-col gap-4 px-6 pb-4 bg-black border-t border-gray-700 animate-slideDown">
           <Link 

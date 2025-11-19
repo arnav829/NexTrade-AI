@@ -3,6 +3,23 @@
 html, body, #root {
   margin: 0;
   padding: 0;
-  background-color: black; /* ensures consistent black background */
+  background-color: black;
   height: 100%;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+.marquee span {
+  white-space: nowrap;
+  display: inline-block;
+  padding-right: 2rem;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

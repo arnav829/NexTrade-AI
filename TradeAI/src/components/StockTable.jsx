@@ -7,7 +7,6 @@ const symbols = [
   "V", "JNJ", "WMT", "PG", "MA", "UNH", "DIS", "HD", "PFE", "KO", "PEP"
 ];
 
-// **Company Names**
 const companyNames = {
   AAPL: "Apple Inc.",
   MSFT: "Microsoft Corp.",

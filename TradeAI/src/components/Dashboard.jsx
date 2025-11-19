@@ -3,7 +3,6 @@ import mobileMockup from "../assets/mobile-mockup.webp";
 import { Twitter, Linkedin, Github } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-// Feature Card (fixed for React + Vite)
 const FeatureCard = ({ title, description, buttonText, href }) => {
   return (
     <div className="p-6 bg-white rounded-xl shadow">
@@ -29,23 +28,22 @@ export default function TradingDashboard({ user }) {
 
   return (
     <div className="min-h-screen text-white">
-      {/* Header */}
+
       <header className="p-6 flex flex-col md:flex-row justify-between items-center">
         <h1 className="text-3xl font-extrabold tracking-tight">
           Trading Dashboard
         </h1>
         <div className="text-lg mt-3 md:mt-0">
-          👋 Hello,{" "}
+          Hello,{" "}
           <span className="font-semibold text-green-400">
             {user?.displayName || "Trader"}
           </span>
         </div>
       </header>
 
-      {/* Main Content */}
+
       <main className="p-6 space-y-12">
 
-        {/* Feature Section */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FeatureCard
             title="Trend Analysis"
@@ -55,7 +53,6 @@ export default function TradingDashboard({ user }) {
           />
         </section>
 
-        {/* Hero Section */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white rounded-3xl shadow-lg p-10">
           <div className="flex flex-col justify-center">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
@@ -97,7 +94,6 @@ export default function TradingDashboard({ user }) {
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="bg-black text-gray-400 py-12 px-6 mt-20 border-t border-gray-800">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
 
