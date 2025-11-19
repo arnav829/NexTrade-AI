@@ -1,28 +1,35 @@
-import React, { use } from "react";
+import React from "react";
 import mobileMockup from "../assets/mobile-mockup.webp";
 import { Twitter, Linkedin, Github } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const FeatureCard = ({ title, description, buttonText }) => (
-  <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300">
-    <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
-    <p className="text-gray-600 mb-4">{description}</p>
-    <button
-      className="cursor-pointer border border-gray-300 px-5 py-2 rounded-full font-medium
-      text-gray-800 bg-white
-      hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-600 hover:text-white
-      hover:shadow-md hover:scale-105
-      transition-all duration-300"
-    >
-      {buttonText}
-    </button>
-  </div>
-);
+// Feature Card (fixed for React + Vite)
+const FeatureCard = ({ title, description, buttonText, href }) => {
+  return (
+    <div className="p-6 bg-white rounded-xl shadow">
+      <h3 className="text-xl font-semibold">{title}</h3>
+      <p className="text-gray-600 mt-2">{description}</p>
+
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mt-4 px-4 py-2 font-semibold
+              bg-gradient-to-r from-green-500 to-emerald-600 text-white
+              shadow-md rounded-lg"
+      >
+        {buttonText}
+      </a>
+    </div>
+  );
+};
 
 export default function TradingDashboard({ user }) {
   const navigate = useNavigate();
+
   return (
     <div className="min-h-screen text-white">
+      {/* Header */}
       <header className="p-6 flex flex-col md:flex-row justify-between items-center">
         <h1 className="text-3xl font-extrabold tracking-tight">
           Trading Dashboard
@@ -35,15 +42,20 @@ export default function TradingDashboard({ user }) {
         </div>
       </header>
 
+      {/* Main Content */}
       <main className="p-6 space-y-12">
+
+        {/* Feature Section */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FeatureCard
             title="Trend Analysis"
             description="Market trends are analyzed using historical data and AI models to predict short-term opportunities."
             buttonText="View Trends"
+            href="http://localhost:8501"
           />
         </section>
 
+        {/* Hero Section */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white rounded-3xl shadow-lg p-10">
           <div className="flex flex-col justify-center">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
@@ -53,6 +65,7 @@ export default function TradingDashboard({ user }) {
               Long-term or short-term, high risk or low risk. Be the kind of
               investor you want to be.
             </p>
+
             <button
               className="w-56 px-6 mb-5 py-3 cursor-pointer rounded-full font-semibold
               bg-gradient-to-r from-green-500 to-emerald-600 text-white
@@ -62,20 +75,16 @@ export default function TradingDashboard({ user }) {
               Start Investing
             </button>
 
-
-             <button
-                onClick={() => navigate("/news")}
-                className="w-56 px-6 py-3 cursor-pointer rounded-full font-semibold
-                bg-gradient-to-r from-green-500 to-emerald-600 text-white
-                shadow-md hover:shadow-lg hover:scale-105
-                transition-all duration-300"
+            <button
+              onClick={() => navigate("/news")}
+              className="w-56 px-6 py-3 cursor-pointer rounded-full font-semibold
+              bg-gradient-to-r from-green-500 to-emerald-600 text-white
+              shadow-md hover:shadow-lg hover:scale-105
+              transition-all duration-300"
             >
-                Real-time News
-              </button>
-
+              Real-time News
+            </button>
           </div>
-
-
 
           <div className="flex justify-center">
             <img
@@ -88,48 +97,48 @@ export default function TradingDashboard({ user }) {
         </section>
       </main>
 
+      {/* Footer */}
       <footer className="bg-black text-gray-400 py-12 px-6 mt-20 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
-        
-        <div>
-          <h2 className="text-white text-2xl font-bold mb-4">NexTradeAI</h2>
-          <p className="text-sm">
-            Smarter trading powered by AI.  
-            Turning complex data into clear, confident decisions.
-          </p>
-        </div>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
 
-        <div>
-          <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2">
-            <li><a href="/" className="hover:text-blue-500 transition">Home</a></li>
-            <li><a href="/Dashboard" className="hover:text-blue-500 transition">Dashboard</a></li>
-            <li><a href="/login" className="hover:text-blue-500 transition">Login</a></li>
-            <li><a href="/about" className="hover:text-blue-500 transition">About</a></li>
-          </ul>
-        </div>
+          <div>
+            <h2 className="text-white text-2xl font-bold mb-4">NexTradeAI</h2>
+            <p className="text-sm">
+              Smarter trading powered by AI.  
+              Turning complex data into clear, confident decisions.
+            </p>
+          </div>
 
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><a href="/" className="hover:text-blue-500 transition">Home</a></li>
+              <li><a href="/dashboard" className="hover:text-blue-500 transition">Dashboard</a></li>
+              <li><a href="/login" className="hover:text-blue-500 transition">Login</a></li>
+              <li><a href="/about" className="hover:text-blue-500 transition">About</a></li>
+            </ul>
+          </div>
 
-        <div className="flex flex-col">
-          <h3 className="text-white text-lg font-semibold mb-4">Connect</h3>
-          <div className="flex space-x-4">
-            <a href="#" className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
-              <Twitter className="w-5 h-5 text-white" />
-            </a>
-            <a href="#" className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
-              <Linkedin className="w-5 h-5 text-white" />
-            </a>
-            <a href="#" className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
-              <Github className="w-5 h-5 text-white" />
-            </a>
+          <div className="flex flex-col">
+            <h3 className="text-white text-lg font-semibold mb-4">Connect</h3>
+            <div className="flex space-x-4">
+              <a href="#" className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
+                <Twitter className="w-5 h-5 text-white" />
+              </a>
+              <a href="#" className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
+                <Linkedin className="w-5 h-5 text-white" />
+              </a>
+              <a href="#" className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
+                <Github className="w-5 h-5 text-white" />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="text-center text-gray-600 text-sm mt-12 border-t border-gray-800 pt-6">
-        © {new Date().getFullYear()} NexTradeAI. All rights reserved.
-      </div>
-    </footer>
+        <div className="text-center text-gray-600 text-sm mt-12 border-t border-gray-800 pt-6">
+          © {new Date().getFullYear()} NexTradeAI. All rights reserved.
+        </div>
+      </footer>
     </div>
   );
 }
