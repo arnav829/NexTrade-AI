@@ -2,6 +2,7 @@ import React from "react";
 import mobileMockup from "../assets/mobile-mockup.webp";
 import { Twitter, Linkedin, Github } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import TradingView from "./TradingView";
 
 const FeatureCard = ({ title, description, buttonText, href }) => {
   return (
@@ -40,7 +41,6 @@ export default function TradingDashboard({ user }) {
           </span>
         </div>
       </header>
-
 
       <main className="p-6 space-y-12">
 
@@ -130,6 +130,8 @@ export default function TradingDashboard({ user }) {
             </div>
           </div>
         </div>
+
+        <TradingView />
 
         <div className="text-center text-gray-600 text-sm mt-12 border-t border-gray-800 pt-6">
           © {new Date().getFullYear()} NexTradeAI. All rights reserved.
