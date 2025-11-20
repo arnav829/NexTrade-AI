@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import Market from "./components/Market";
 import Dashboard from "./components/Dashboard";
 
 import News from "./components/News";
@@ -46,6 +47,7 @@ function MainApp({ user, setUser, handleLogout }) {
           <Route path="/" element={<Home />} />
           <Route path="/chart/:symbol" element={<ChartDashboard />} />
           <Route path="/dashboard" element={<Dashboard user={user} />} />
+          <Route path="/market" element={<Market user={user}/>} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/news" element={<News />} /> 
         </Routes>

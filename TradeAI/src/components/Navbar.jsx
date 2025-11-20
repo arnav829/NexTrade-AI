@@ -14,6 +14,7 @@ const Navbar = ({ user, onLogout }) => {
         <div className="hidden md:flex flex-row items-center gap-8">
           <Link to="/" className="hover:text-blue-400 transition">Home</Link>
           <Link to="/dashboard" className="hover:text-blue-400 transition">Dashboard</Link>
+          <Link to="/market" className="hover:text-blue-400 transition">Markets</Link>
         </div>
 
         <div className="hidden md:block">
@@ -58,6 +59,15 @@ const Navbar = ({ user, onLogout }) => {
             className="hover:text-blue-400 transition"
           >
             Dashboard
+          </Link>
+
+
+          <Link 
+            to="/market"
+            onClick={() => setOpen(false)}
+            className="hover:text-blue-400 transition"
+          >
+            Markets
           </Link>
 
        
