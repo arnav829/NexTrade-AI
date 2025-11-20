@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const API_KEY = "d3vso5hr01qn5gnjftegd3vso5hr01qn5gnjftf0";
 
@@ -33,6 +35,7 @@ const companyNames = {
 const StockTable = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   const fetchStockData = async () => {
     try {
@@ -86,6 +89,7 @@ const StockTable = () => {
                 return (
                   <tr
                     key={stock.symbol}
+                    onClick={() => navigate(`/chart/${stock.symbol}`)}
                     className="border-b border-gray-700 hover:bg-gray-700 transition"
                   >
                     <td className="py-2 px-4">{index + 1}</td>
@@ -124,3 +128,8 @@ const StockTable = () => {
 };
 
 export default StockTable;
+
+
+
+
+

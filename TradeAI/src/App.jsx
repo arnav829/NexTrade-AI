@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import About from "./components/About"; 
 import News from "./components/News";
+import ChartDashboard from "./components/ChartDashboard";
 import { auth } from "./firebaseconfigurations/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
@@ -43,6 +44,7 @@ function MainApp({ user, setUser, handleLogout }) {
       <div className={!hideNavbar ? "pt-20" : ""}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/chart/:symbol" element={<ChartDashboard />} />
           <Route path="/dashboard" element={<Dashboard user={user} />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/about" element={<About user={user} />} />

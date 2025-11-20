@@ -4,7 +4,7 @@ import { ArrowUp, Twitter, Linkedin, Github } from "lucide-react";
 const About = () => {
   const [showButton, setShowButton] = useState(false);
 
-  // Show the button when scrolled down 300px
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
@@ -17,7 +17,7 @@ const About = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Scroll smoothly to top
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -66,7 +66,7 @@ const About = () => {
           ))}
         </div>
 
-        {/* Scroll-to-top button */}
+        
         {showButton && (
           <button
             onClick={scrollToTop}
@@ -78,10 +78,10 @@ const About = () => {
         )}
       </div>
 
-      {/* Footer Section */}
+      
       <footer className="bg-black text-gray-400 py-12 px-6 mt-20 border-t border-gray-800">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
-          {/* Brand Section */}
+          
           <div>
             <h2 className="text-white text-2xl font-bold mb-4">NexTradeAI</h2>
             <p className="text-sm">
@@ -90,7 +90,7 @@ const About = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
+          
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
