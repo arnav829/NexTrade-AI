@@ -6,6 +6,10 @@ function TradingViewWidget() {
 
   useEffect(
     () => {
+
+        if(container.current){
+            container.current.innerHTML ="";
+        }
       const script = document.createElement("script");
       script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
       script.type = "text/javascript";
@@ -24,7 +28,7 @@ function TradingViewWidget() {
           "locale": "en",
           "save_image": true,
           "style": "1",
-          "symbol": "NASDAQ:AAPL",
+          "symbol": "NASDAQ:NFLX",
           "theme": "dark",
           "timezone": "Etc/UTC",
           "backgroundColor": "#0F0F0F",
@@ -43,7 +47,7 @@ function TradingViewWidget() {
   return (
     <div className="tradingview-widget-container" ref={container} style={{ height: "100%", width: "100%" }}>
       <div className="tradingview-widget-container__widget" style={{ height: "calc(100% - 32px)", width: "100%" }}></div>
-      <div className="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener nofollow" target="_blank"><span className="blue-text">AAPL stock chart</span></a><span className="trademark"> by TradingView</span></div>
+      <div className="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-NFLX/" rel="noopener nofollow" target="_blank"><span className="blue-text">NFLX stock chart</span></a><span className="trademark"> by TradingView</span></div>
     </div>
   );
 }
