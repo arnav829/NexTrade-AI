@@ -114,7 +114,6 @@ export default function Home() {
               <li><a href="/" className="hover:text-blue-500 transition">Home</a></li>
               <li><a href="/Dashboard" className="hover:text-blue-500 transition">Dashboard</a></li>
               <li><a href="/login" className="hover:text-blue-500 transition">Login</a></li>
-              <li><a href="/about" className="hover:text-blue-500 transition">About</a></li>
             </ul>
           </div>
 

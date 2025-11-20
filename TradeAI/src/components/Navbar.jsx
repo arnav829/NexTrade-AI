@@ -7,7 +7,6 @@ const Navbar = ({ user, onLogout }) => {
   return (
     <nav className="bg-black text-white sticky top-0 z-50">
 
-      {/* Top Navbar */}
       <div className="flex justify-between items-center px-6 py-4 shadow-md">
         
         <p className="text-2xl font-bold">Nextrade AI</p>
@@ -15,7 +14,6 @@ const Navbar = ({ user, onLogout }) => {
         <div className="hidden md:flex flex-row items-center gap-8">
           <Link to="/" className="hover:text-blue-400 transition">Home</Link>
           <Link to="/dashboard" className="hover:text-blue-400 transition">Dashboard</Link>
-          <Link to="/about" className="hover:text-blue-400 transition">About</Link>
         </div>
 
         <div className="hidden md:block">
@@ -62,14 +60,7 @@ const Navbar = ({ user, onLogout }) => {
             Dashboard
           </Link>
 
-          <Link 
-            to="/about"
-            onClick={() => setOpen(false)}
-            className="hover:text-blue-400 transition"
-          >
-            About
-          </Link>
-
+       
           {!user ? (
             <Link
               to="/login"

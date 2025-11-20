@@ -67,9 +67,6 @@ export default function TradingDashboard({ user }) {
 
 
       <header className="p-6 flex flex-col md:flex-row justify-between items-center">
-        <h1 className="text-3xl font-extrabold tracking-tight">
-          Trading Dashboard
-        </h1>
         <div className="text-lg mt-3 md:mt-0">
           Hello,{" "}
           <span className="font-semibold text-green-400">
@@ -80,23 +77,25 @@ export default function TradingDashboard({ user }) {
 
       <main className="p-6 space-y-12">
 
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <FeatureCard
-            title="Trend Analysis"
-            description="Market trends are analyzed using historical data and AI models to predict short-term opportunities."
-            buttonText="View Trends"
-            href="http://localhost:8501"
-          />
-        </section>
 
-
-
-
-
-
-
-
-
+      <div className="w-full">
+      <video
+        className="
+          w-full
+          rounded-xl
+          shadow-lg
+          object-cover
+          h-64
+          lg:h-[500px]
+          xl:h-[650px]
+        "
+        src={video_trade}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+    </div>
 
 
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white rounded-3xl shadow-lg p-10">
@@ -143,34 +142,11 @@ export default function TradingDashboard({ user }) {
 
 <section className="w-full">
   <div className="w-full flex flex-col gap-6 p-5">
-
-    
-
-    <div className="w-full">
-      <video
-        className="
-          w-full
-          rounded-xl
-          shadow-lg
-          object-cover
-          h-64
-          lg:h-[500px]
-          xl:h-[650px]
-        "
-        src={video_trade}
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-    </div>
-
     <div className="w-full flex justify-center gap-5">
       <TradeNews />
       <OverView />
       <Gainer_Loser />
     </div>
-
   </div>
 </section>
 
@@ -193,7 +169,6 @@ export default function TradingDashboard({ user }) {
               <li><a href="/" className="hover:text-blue-500 transition">Home</a></li>
               <li><a href="/dashboard" className="hover:text-blue-500 transition">Dashboard</a></li>
               <li><a href="/login" className="hover:text-blue-500 transition">Login</a></li>
-              <li><a href="/about" className="hover:text-blue-500 transition">About</a></li>
             </ul>
           </div>
 
