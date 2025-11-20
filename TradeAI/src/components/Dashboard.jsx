@@ -6,8 +6,13 @@ import AAPL from "./TradeSlider/AAPL";
 import AMZN from "./TradeSlider/AMZN";
 import NVDA from "./TradeSlider/NVDA";
 import TSLA from "./TradeSlider/TSLA";
-
-
+import META from "./TradeSlider/META";
+import GOOGLE from "./TradeSlider/GOOGLE";
+import BITCOIN from "./TradeSlider/BITCOIN";
+import TradeNews from "./TradeNews";
+import video_trade from "../assets/video_trade.mp4";
+import OverView from "./OverView";
+import Gainer_Loser from "./Gainer_Loser";
 const FeatureCard = ({ title, description, buttonText, href }) => {
   return (
     <div className="p-6 bg-white rounded-xl shadow">
@@ -33,6 +38,33 @@ export default function TradingDashboard({ user }) {
 
   return (
     <div className="min-h-screen text-white">
+      
+<section className="w-full overflow-x-auto">
+      <div className="flex gap-6 px-4 py-4 snap-x snap-mandatory overflow-x-scroll scrollbar-hide">
+    <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
+      <AAPL />
+    </div>
+    <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
+      <AMZN />
+    </div>
+    <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
+      <NVDA />
+    </div>
+    <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
+      <TSLA />
+    </div>
+     <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
+      <META />
+    </div>
+     <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
+      <GOOGLE />
+    </div>
+     <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
+      <BITCOIN />
+    </div>
+  </div>
+</section>
+
 
       <header className="p-6 flex flex-col md:flex-row justify-between items-center">
         <h1 className="text-3xl font-extrabold tracking-tight">
@@ -60,23 +92,6 @@ export default function TradingDashboard({ user }) {
 
 
 
-
-<section className="w-full overflow-x-auto">
-      <div className="flex gap-6 px-4 py-4 snap-x snap-mandatory overflow-x-scroll scrollbar-hide">
-    <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
-      <AAPL />
-    </div>
-    <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
-      <AMZN />
-    </div>
-    <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
-      <NVDA />
-    </div>
-    <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
-      <TSLA />
-    </div>
-  </div>
-</section>
 
 
 
@@ -125,7 +140,39 @@ export default function TradingDashboard({ user }) {
         </section>
       </main>
 
-  
+
+<section className="w-full">
+  <div className="w-full flex flex-col gap-6 p-5">
+
+    
+
+    <div className="w-full">
+      <video
+        className="
+          w-full
+          rounded-xl
+          shadow-lg
+          object-cover
+          h-64
+          lg:h-[500px]
+          xl:h-[650px]
+        "
+        src={video_trade}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+    </div>
+
+    <div className="w-full flex justify-center gap-5">
+      <TradeNews />
+      <OverView />
+      <Gainer_Loser />
+    </div>
+
+  </div>
+</section>
 
 
 

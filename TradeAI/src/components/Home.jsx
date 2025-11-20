@@ -3,7 +3,6 @@ import sampleVideo from "../assets/home_bg_video.mp4";
 import bgImage from "../assets/bg_video.webp";
 import { Twitter, Linkedin, Github } from "lucide-react";
 import StockTable from "../components/StockTable";
-
 export default function Home() {
   const navigate = useNavigate();
 
@@ -91,6 +90,9 @@ export default function Home() {
     "
   />
 </div>
+
+
+
 
 <div className="w-full px-4 mt-10">
   <StockTable />

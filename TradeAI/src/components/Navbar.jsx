@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import TickerTape from "./TickerTape";
 const Navbar = ({ user, onLogout }) => {
   const [open, setOpen] = useState(false);
 
@@ -43,25 +43,6 @@ const Navbar = ({ user, onLogout }) => {
           {open ? "✖" : "☰"}
         </button>
       </div>
-
-    
-      <div className="bg-gray-900 font-semibold py-2 overflow-hidden whitespace-nowrap border-t border-gray-700">
-  <div className="marquee">
-    <span>
-      Master Trading with Nextrade AI — Learn stock market basics, trade confidently, and grow your portfolio!  |
-      Beginner-friendly tutorials • AI-powered stock analysis • Real-time price tracking • Smart portfolio insights •
-      Start your trading journey with confidence and data-driven decisions!  |
-    </span>
-
-    <span>
-      Master Trading with Nextrade AI — Learn stock market basics, trade confidently, and grow your portfolio!  |
-      Beginner-friendly tutorials • AI-powered stock analysis • Real-time price tracking • Smart portfolio insights •
-      Start your trading journey with confidence and data-driven decisions!  |
-    </span>
-  </div>
-</div>
-
-
     
       {open && (
         <div className="md:hidden flex flex-col gap-4 px-6 pb-4 bg-black border-t border-gray-700 animate-slideDown">
@@ -110,6 +91,7 @@ const Navbar = ({ user, onLogout }) => {
           )}
         </div>
       )}
+      <TickerTape />
     </nav>
   );
 };
