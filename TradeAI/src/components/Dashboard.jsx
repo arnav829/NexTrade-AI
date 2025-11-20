@@ -1,8 +1,11 @@
 import React from "react";
 import mobileMockup from "../assets/mobile-mockup.webp";
-import { Twitter, Linkedin, Github } from "lucide-react";
+import { Twitter, Linkedin, Github, Apple } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import TradingView from "./TradingView";
+import Tesla from "./Tesla";
+import AAPL from "./AAPL"
+import Meta from "./Meta";
+import Netflix from "./Netflix";
 
 const FeatureCard = ({ title, description, buttonText, href }) => {
   return (
@@ -94,6 +97,19 @@ export default function TradingDashboard({ user }) {
         </section>
       </main>
 
+
+      <section>
+          <div className="flex flex-row gap-8">
+            
+              <Tesla />
+              <AAPL />
+              <Meta />
+              <Netflix />
+          </div>
+      </section>
+
+
+
       <footer className="bg-black text-gray-400 py-12 px-6 mt-20 border-t border-gray-800">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
 
@@ -131,7 +147,6 @@ export default function TradingDashboard({ user }) {
           </div>
         </div>
 
-        <TradingView />
 
         <div className="text-center text-gray-600 text-sm mt-12 border-t border-gray-800 pt-6">
           © {new Date().getFullYear()} NexTradeAI. All rights reserved.

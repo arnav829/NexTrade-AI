@@ -92,7 +92,6 @@ export default function Home() {
   />
 </div>
 
-
 <div className="w-full px-4 mt-10">
   <StockTable />
 </div>
@@ -140,6 +139,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
