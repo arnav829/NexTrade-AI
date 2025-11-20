@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import HeatmapWidget from "./HeatmapWidget";
 
 
 function TradingViewEmbed({ widgetSrc, config, className, style }) {
@@ -34,11 +35,11 @@ export default function Market() {
   const [fxAndFutures, setFxAndFutures] = useState(null);
   const [indiaMacro, setIndiaMacro] = useState(null);
 
-  
+
   useEffect(() => {
     const fetchCrypto = async () => {
       try {
-       
+
         const globalRes = await fetch("https://api.coingecko.com/api/v3/global");
         const globalJson = await globalRes.json();
 
@@ -47,7 +48,7 @@ export default function Market() {
         const btcDom = globalJson?.data?.market_cap_percentage?.btc || 0;
         const ethDom = globalJson?.data?.market_cap_percentage?.eth || 0;
 
-        
+
         const priceRes = await fetch(
           "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd&include_24hr_change=true"
         );
@@ -73,11 +74,11 @@ export default function Market() {
     };
 
     fetchCrypto();
-    const interval = setInterval(fetchCrypto, 5 * 60 * 1000); 
+    const interval = setInterval(fetchCrypto, 5 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 
-  
+
   useEffect(() => {
     const fetchFxFutures = async () => {
       try {
@@ -110,9 +111,9 @@ export default function Market() {
     return () => clearInterval(interval);
   }, []);
 
-  
+
   useEffect(() => {
-   
+
     setIndiaMacro({
       yieldValue: 6.53,
       yieldChange: 0.31,
@@ -219,16 +220,16 @@ export default function Market() {
 
 
   return (
-    <div className="min-h-screen w-full bg-black text-white px-4 sm:px-6 lg:px-10 py-8">
+    <div className="min-h-screen w-full bg-black text-white px-4 sm:px-6 lg:px-10 ">
       <div className="max-w-7xl mx-auto">
-        
+
         <div className="mb-6 flex items-center justify-between">
           <h1 className="text-3xl sm:text-4xl font-bold">Market summary</h1>
         </div>
 
-     
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-         
+
           <div className="lg:col-span-2 bg-[#050509] rounded-3xl border border-gray-800 shadow-xl p-4 sm:p-5">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-3">
@@ -253,7 +254,7 @@ export default function Market() {
             />
           </div>
 
-          
+
           <div className="bg-[#050509] rounded-3xl border border-gray-800 shadow-xl p-4 sm:p-5 flex flex-col">
             <div className="flex items-center justify-between mb-3">
               <h2 className="text-lg font-semibold">Major indices</h2>
@@ -279,9 +280,9 @@ export default function Market() {
           </div>
         </div>
 
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-         
+
           <div className="bg-[#050509] rounded-3xl border border-gray-800 shadow-xl p-4 flex flex-col">
             <div className="flex items-center justify-between mb-2">
               <div>
@@ -306,7 +307,7 @@ export default function Market() {
               </button>
             </div>
 
-           
+
             <div className="mb-2">
               {cryptoStats ? (
                 <>
@@ -315,11 +316,10 @@ export default function Market() {
                     <span className="text-xs text-gray-400">USD</span>
                   </p>
                   <p
-                    className={`text-sm ${
-                      cryptoStats.mcapChange >= 0
+                    className={`text-sm ${cryptoStats.mcapChange >= 0
                         ? "text-green-400"
                         : "text-red-400"
-                    }`}
+                      }`}
                   >
                     {cryptoStats.mcapChange >= 0 ? "+" : ""}
                     {cryptoStats.mcapChange.toFixed(2)}%
@@ -330,7 +330,7 @@ export default function Market() {
               )}
             </div>
 
-            
+
             <TradingViewEmbed
               widgetSrc="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js"
               config={cryptoTotalConfig}
@@ -338,7 +338,7 @@ export default function Market() {
               style={{ height: 200 }}
             />
 
-            
+
             {cryptoStats && (
               <>
                 <p className="text-xs text-gray-400 mb-1">Bitcoin dominance</p>
@@ -410,7 +410,7 @@ export default function Market() {
             )}
           </div>
 
-          
+
           <div className="bg-[#050509] rounded-3xl border border-gray-800 shadow-xl p-4 flex flex-col">
             <div className="flex items-center justify-between mb-2">
               <div>
@@ -434,7 +434,7 @@ export default function Market() {
               </button>
             </div>
 
-         
+
             <div className="mb-2">
               {fxAndFutures?.usdInr ? (
                 <>
@@ -443,11 +443,10 @@ export default function Market() {
                     <span className="text-xs text-gray-400">INR</span>
                   </p>
                   <p
-                    className={`text-sm ${
-                      fxAndFutures.usdInr.regularMarketChangePercent >= 0
+                    className={`text-sm ${fxAndFutures.usdInr.regularMarketChangePercent >= 0
                         ? "text-green-400"
                         : "text-red-400"
-                    }`}
+                      }`}
                   >
                     {fxAndFutures.usdInr.regularMarketChangePercent >= 0
                       ? "+"
@@ -505,11 +504,10 @@ export default function Market() {
                     {indiaMacro.yieldValue.toFixed(3)}%
                   </p>
                   <p
-                    className={`text-sm ${
-                      indiaMacro.yieldChange >= 0
+                    className={`text-sm ${indiaMacro.yieldChange >= 0
                         ? "text-green-400"
                         : "text-red-400"
-                    }`}
+                      }`}
                   >
                     {indiaMacro.yieldChange >= 0 ? "+" : ""}
                     {indiaMacro.yieldChange.toFixed(2)}%
@@ -527,7 +525,7 @@ export default function Market() {
               style={{ height: 200 }}
             />
 
-            
+
             {indiaMacro && (
               <>
                 <p className="text-xs text-gray-400 mb-1">
@@ -563,7 +561,16 @@ export default function Market() {
             )}
           </div>
         </div>
+
+        <div className=" flex items-center justify-between">
+          <h1 className="text-3xl sm:text-4xl font-bold p-4">Heat Map</h1>
+        </div>
+        <div className="">
+          <HeatmapWidget />
+        </div>
       </div>
+
+
     </div>
   );
 }
@@ -600,4 +607,7 @@ function renderFutureRow(label, quote) {
     </div>
   );
 }
+
+
+
 
