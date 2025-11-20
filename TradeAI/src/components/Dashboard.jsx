@@ -2,10 +2,11 @@ import React from "react";
 import mobileMockup from "../assets/mobile-mockup.webp";
 import { Twitter, Linkedin, Github, Apple } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import Tesla from "./Tesla";
-import AAPL from "./AAPL"
-import Meta from "./Meta";
-import Netflix from "./Netflix";
+import AAPL from "./TradeSlider/AAPL";
+import AMZN from "./TradeSlider/AMZN";
+import NVDA from "./TradeSlider/NVDA";
+import TSLA from "./TradeSlider/TSLA";
+
 
 const FeatureCard = ({ title, description, buttonText, href }) => {
   return (
@@ -56,6 +57,33 @@ export default function TradingDashboard({ user }) {
           />
         </section>
 
+
+
+
+
+<section className="w-full overflow-x-auto">
+      <div className="flex gap-6 px-4 py-4 snap-x snap-mandatory overflow-x-scroll scrollbar-hide">
+    <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
+      <AAPL />
+    </div>
+    <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
+      <AMZN />
+    </div>
+    <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
+      <NVDA />
+    </div>
+    <div className="snap-center shrink-0 w-[90vw] md:w-[400px]">
+      <TSLA />
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white rounded-3xl shadow-lg p-10">
           <div className="flex flex-col justify-center">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
@@ -97,16 +125,7 @@ export default function TradingDashboard({ user }) {
         </section>
       </main>
 
-
-      <section>
-          <div className="flex flex-row gap-8">
-            
-              <Tesla />
-              <AAPL />
-              <Meta />
-              <Netflix />
-          </div>
-      </section>
+  
 
 
 
