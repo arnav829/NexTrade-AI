@@ -32,7 +32,7 @@ function TradingViewWidget() {
           "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
           "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
           "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
-          "width": "400",
+          "width": "550",
           "height": "550"
         }`;
       container.current.appendChild(script);

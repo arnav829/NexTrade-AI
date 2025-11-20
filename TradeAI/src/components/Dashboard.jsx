@@ -144,9 +144,17 @@ export default function TradingDashboard({ user }) {
   <div className="w-full flex flex-col gap-6 p-5">
     <div className="w-full flex justify-center gap-5">
       <TradeNews />
-      <OverView />
-      <Gainer_Loser />
+     
     </div>
+
+
+    <div className="flex gap-5 justify-center  w-full ">
+      <Gainer_Loser/>
+      <OverView/>
+      
+    </div>
+
+
   </div>
 </section>
 

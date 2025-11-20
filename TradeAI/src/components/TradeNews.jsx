@@ -17,8 +17,8 @@ function TradingViewWidget() {
           "colorTheme": "dark",
           "isTransparent": false,
           "locale": "en",
-          "width": 400,
-          "height": 550
+          "width": 1200,
+          "height": 500
         }`;
       container.current.appendChild(script);
     },
