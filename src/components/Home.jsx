@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import sampleVideo from "../assets/home_bg_video.mp4";
 import bgImage from "../assets/bg_video.webp";
 import { Twitter, Linkedin, Github } from "lucide-react";
-import StockTable from "../components/StockTable";
+import StockTable from "./StockTable";
 export default function Home() {
   const navigate = useNavigate();
 
