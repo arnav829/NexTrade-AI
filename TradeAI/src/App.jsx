@@ -10,6 +10,7 @@ import News from "./components/News";
 import ChartDashboard from "./components/ChartDashboard";
 import { auth } from "./firebaseconfigurations/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [user, setUser] = useState(null);
