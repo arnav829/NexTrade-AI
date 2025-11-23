@@ -568,7 +568,37 @@ export default function Market() {
         <div className="">
           <HeatmapWidget />
         </div>
+
+
+         <footer className="bg-black text-gray-400 py-12 px-6 mt-20 border-t border-gray-800 w-full">
+        <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-12">
+          <div>
+            <h2 className="text-white text-2xl font-bold mb-4">NexTradeAI</h2>
+            <p className="text-sm">
+              Smarter trading powered by AI.
+              Turning complex data into clear, confident decisions.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              <li><a href="/" className="hover:text-blue-500 transition">Home</a></li>
+              <li><a href="/Dashboard" className="hover:text-blue-500 transition">Dashboard</a></li>
+              <li><a href="/login" className="hover:text-blue-500 transition">Login</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div className="text-center text-gray-600 text-xs sm:text-sm mt-12 pt-6">
+          © 2025 NexTradeAI. All rights reserved.
+        </div>
+      </footer>
+      
       </div>
+
+      
 
 
     </div>

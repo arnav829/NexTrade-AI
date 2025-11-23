@@ -101,21 +101,12 @@ export default function TradingDashboard({ user }) {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white rounded-3xl shadow-lg p-10">
           <div className="flex flex-col justify-center">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-              Indian markets at your fingertips.
+               Markets at your fingertips.
             </h2>
             <p className="text-gray-600 text-lg mb-6">
               Long-term or short-term, high risk or low risk. Be the kind of
               investor you want to be.
             </p>
-
-            <button
-              className="w-56 px-6 mb-5 py-3 cursor-pointer rounded-full font-semibold
-              bg-gradient-to-r from-green-500 to-emerald-600 text-white
-              shadow-md hover:shadow-lg hover:scale-105
-              transition-all duration-300"
-            >
-              Start Investing
-            </button>
 
             <button
               onClick={() => navigate("/news")}
@@ -180,20 +171,6 @@ export default function TradingDashboard({ user }) {
             </ul>
           </div>
 
-          <div className="flex flex-col">
-            <h3 className="text-white text-lg font-semibold mb-4">Connect</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
-                <Twitter className="w-5 h-5 text-white" />
-              </a>
-              <a href="#" className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
-                <Linkedin className="w-5 h-5 text-white" />
-              </a>
-              <a href="#" className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
-                <Github className="w-5 h-5 text-white" />
-              </a>
-            </div>
-          </div>
         </div>
 
 

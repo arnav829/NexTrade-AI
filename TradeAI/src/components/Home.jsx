@@ -117,20 +117,6 @@ export default function Home() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Connect</h3>
-            <div className="flex space-x-4">
-              <a className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
-                <Twitter className="w-5 h-5 text-white" />
-              </a>
-              <a className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
-                <Linkedin className="w-5 h-5 text-white" />
-              </a>
-              <a className="p-2 rounded-full bg-gray-900 hover:bg-blue-600 transition">
-                <Github className="w-5 h-5 text-white" />
-              </a>
-            </div>
-          </div>
         </div>
 
         <div className="text-center text-gray-600 text-xs sm:text-sm mt-12 pt-6">
